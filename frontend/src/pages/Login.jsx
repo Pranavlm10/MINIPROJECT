@@ -31,7 +31,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8 relative overflow-hidden" style={{ background: '#faf9fc' }}>
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-8 relative overflow-hidden">
       {/* Ambient blobs */}
       <div className="absolute top-[-15%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none -z-10"
         style={{ background: 'radial-gradient(circle,rgba(157,134,225,0.14) 0%,transparent 68%)', animation: 'blobDrift 14s ease-in-out infinite alternate' }} />

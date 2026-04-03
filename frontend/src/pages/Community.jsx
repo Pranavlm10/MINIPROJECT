@@ -136,7 +136,7 @@ export default function Community() {
     return `${Math.floor(hrs / 24)}d ago`;
   };
   return (
-    <div className="min-h-screen bg-warm-50 flex">
+    <div className="min-h-screen bg-transparent flex">
       <Sidebar active="/community" />
 
       <main className="ml-64 p-10 flex-1">

@@ -44,7 +44,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfcff] flex items-center justify-center p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-8 relative overflow-hidden">
       {/* Dynamic Background Blobs */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 bg-grid-pattern opacity-5" />
       <div className="absolute top-[-10%] left-[-5%] w-[40vw] h-[40vw] bg-primary-100/40 rounded-full blur-[120px] animate-pulse-slow" />

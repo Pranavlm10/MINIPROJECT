@@ -127,7 +127,7 @@ export default function Resources() {
     : resources.categories;
 
   return (
-    <div className="min-h-screen bg-warm-50 flex">
+    <div className="min-h-screen bg-transparent flex">
       <Sidebar active="/resources" />
 
       <main className="ml-64 p-10 flex-1">

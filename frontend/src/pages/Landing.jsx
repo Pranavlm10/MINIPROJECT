@@ -12,7 +12,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9fc] font-sans text-[#303238] antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-transparent font-sans text-[#303238] antialiased overflow-x-hidden">
 
       {/* ── Background Blobs ── */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">

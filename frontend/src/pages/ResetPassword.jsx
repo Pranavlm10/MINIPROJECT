@@ -66,14 +66,14 @@ export default function ResetPassword() {
 
   if (checking) {
     return (
-      <div className="min-h-screen bg-warm-900 flex items-center justify-center">
+      <div className="min-h-screen bg-transparent flex items-center justify-center">
         <div className="text-warm-500">Verifying reset link...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-warm-900 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

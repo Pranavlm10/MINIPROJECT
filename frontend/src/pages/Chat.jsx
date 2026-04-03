@@ -93,7 +93,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfcff] flex">
+    <div className="min-h-screen bg-transparent flex">
       <Sidebar active="/chat" />
 
       <main className="flex-1 ml-[18rem] mr-8 my-6 flex flex-col h-[calc(100vh-3rem)] bg-white/40 border border-white/60 rounded-[3.5rem] shadow-[0_20px_80px_rgba(0,0,0,0.02)] backdrop-blur-3xl overflow-hidden relative">

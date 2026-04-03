@@ -104,7 +104,7 @@ export default function Dashboard() {
   );
 
   return (
-    <div className="min-h-screen flex" style={{ background: '#faf9fc' }}>
+    <div className="min-h-screen bg-transparent flex">
       <Sidebar />
 
       <main className="flex-1 ml-[18rem] mr-6 my-5 p-8 rounded-[2.5rem] relative overflow-hidden"

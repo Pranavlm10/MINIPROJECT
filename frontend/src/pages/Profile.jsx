@@ -63,7 +63,7 @@ export default function Profile() {
   ];
 
   return (
-    <div className="min-h-screen bg-warm-50 flex">
+    <div className="min-h-screen bg-transparent flex">
       <Sidebar active="/profile" />
 
       <main className="ml-64 p-10 flex-1 max-w-5xl">

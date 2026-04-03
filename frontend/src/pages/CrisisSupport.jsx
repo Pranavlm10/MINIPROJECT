@@ -37,7 +37,7 @@ const CRISIS_RESOURCES = [
 
 export default function CrisisSupport() {
   return (
-    <div className="min-h-screen bg-warm-50">
+    <div className="min-h-screen bg-transparent flex">
       {/* Full-width emergency banner */}
       <div className="bg-red-600 shadow-xl shadow-red-100 border-b border-red-700">
         <div className="max-w-6xl mx-auto px-8 py-8 flex items-center justify-between">
