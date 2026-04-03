@@ -8,7 +8,7 @@ router.get('/profile', (req, res) => {
     success: true,
     user: {
       uid: 'demo-user-001',
-      email: 'demo@mindwell.app',
+      email: 'demo@reclaim.app',
       displayName: 'Demo User',
       createdAt: new Date().toISOString()
     }

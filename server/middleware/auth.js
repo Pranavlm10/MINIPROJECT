@@ -13,7 +13,7 @@ const verifyToken = async (req, res, next) => {
     if (process.env.NODE_ENV !== 'production') {
       req.user = {
         uid: 'demo-user-001',
-        email: 'demo@mindwell.app',
+        email: 'demo@reclaim.app',
         name: 'Demo User'
       };
       return next();
@@ -33,7 +33,7 @@ const verifyToken = async (req, res, next) => {
       if (process.env.NODE_ENV !== 'production') {
         req.user = {
           uid: 'demo-user-001',
-          email: 'demo@mindwell.app',
+          email: 'demo@reclaim.app',
           name: 'Demo User'
         };
         return next();
@@ -64,7 +64,7 @@ const verifyToken = async (req, res, next) => {
     if (process.env.NODE_ENV !== 'production') {
       req.user = {
         uid: 'demo-user-001',
-        email: 'demo@mindwell.app',
+        email: 'demo@reclaim.app',
         name: 'Demo User'
       };
       return next();

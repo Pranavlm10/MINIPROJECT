@@ -5,32 +5,32 @@ import Sidebar from '../components/Sidebar';
 
 const CATEGORY_ICONS = {
   stress: (
-    <svg className="w-6 h-6 text-warm-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-warm-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
     </svg>
   ),
   anxiety: (
-    <svg className="w-6 h-6 text-warm-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-warm-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
     </svg>
   ),
   depression: (
-    <svg className="w-6 h-6 text-warm-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-warm-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>
   ),
   academic: (
-    <svg className="w-6 h-6 text-warm-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-warm-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
     </svg>
   ),
   sleep: (
-    <svg className="w-6 h-6 text-warm-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-warm-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
     </svg>
   ),
   social: (
-    <svg className="w-6 h-6 text-warm-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-warm-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>
   ),
@@ -92,15 +92,15 @@ const FALLBACK_RESOURCES = {
 };
 
 const TYPE_BADGES = {
-  exercise: { label: 'Exercise', color: 'bg-green-500/20 text-green-300 border-green-500/30' },
-  breathing: { label: 'Breathing', color: 'bg-teal-500/20 text-teal-300 border-teal-500/30' },
-  article: { label: 'Article', color: 'bg-blue-500/20 text-blue-300 border-blue-500/30' },
-  meditation: { label: 'Meditation', color: 'bg-purple-500/20 text-purple-300 border-purple-500/30' },
-  technique: { label: 'Technique', color: 'bg-amber-500/20 text-amber-300 border-amber-500/30' },
-  journaling: { label: 'Journaling', color: 'bg-pink-500/20 text-pink-300 border-pink-500/30' },
-  lifestyle: { label: 'Lifestyle', color: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' },
-  checklist: { label: 'Checklist', color: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30' },
-  visualization: { label: 'Visualization', color: 'bg-violet-500/20 text-violet-300 border-violet-500/30' },
+  exercise: { label: 'Exercise', color: 'bg-green-50 text-green-700 border-green-100' },
+  breathing: { label: 'Breathing', color: 'bg-teal-50 text-teal-700 border-teal-100' },
+  article: { label: 'Article', color: 'bg-blue-50 text-blue-700 border-blue-100' },
+  meditation: { label: 'Meditation', color: 'bg-primary-50 text-primary-700 border-primary-100' },
+  technique: { label: 'Technique', color: 'bg-amber-50 text-amber-700 border-amber-100' },
+  journaling: { label: 'Journaling', color: 'bg-pink-50 text-pink-700 border-pink-100' },
+  lifestyle: { label: 'Lifestyle', color: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+  checklist: { label: 'Checklist', color: 'bg-indigo-50 text-indigo-700 border-indigo-100' },
+  visualization: { label: 'Visualization', color: 'bg-violet-50 text-violet-700 border-violet-100' },
 };
 
 export default function Resources() {
@@ -127,38 +127,36 @@ export default function Resources() {
     : resources.categories;
 
   return (
-    <div className="min-h-screen bg-warm-50">
+    <div className="min-h-screen bg-warm-50 flex">
       <Sidebar active="/resources" />
 
-      <main className="ml-64 p-8">
+      <main className="ml-64 p-10 flex-1">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
-        >
-          <h1 className="text-3xl font-bold mb-1">
-            <span className="text-primary-700">Self-Help Resources</span>
-          </h1>
-          <p className="text-warm-500">Evidence-based coping strategies, exercises, and guides for your well-being.</p>
-        </motion.div>
+        <header className="mb-10">
+          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
+            <h1 className="text-4xl font-black text-warm-900 tracking-tighter mb-2">
+              Resource Library
+            </h1>
+            <p className="text-lg text-warm-500 font-medium">Evidence-based coping strategies and guides for your mental well-being.</p>
+          </motion.div>
+        </header>
 
         {/* Category filters */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex bg-white p-1 rounded-[1.5rem] shadow-sm border border-warm-100 mb-10 w-fit shrink-0">
           <button
             onClick={() => setActiveCategory(null)}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-              !activeCategory ? 'bg-primary-500/20 text-primary-700 border border-primary-500/30' : 'text-warm-500 hover:bg-warm-50 border border-transparent'
+            className={`px-6 py-2.5 rounded-xl text-sm font-black tracking-tight transition-all ${
+              !activeCategory ? 'bg-primary-600 text-white shadow-lg shadow-primary-100' : 'text-warm-400 hover:text-warm-900'
             }`}
           >
-            All Categories
+            All Resources
           </button>
           {resources.categories.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-                activeCategory === cat.id ? 'bg-primary-500/20 text-primary-700 border border-primary-500/30' : 'text-warm-500 hover:bg-warm-50 border border-transparent'
+              className={`px-6 py-2.5 rounded-xl text-sm font-black tracking-tight transition-all ${
+                activeCategory === cat.id ? 'bg-primary-600 text-white shadow-lg shadow-primary-100' : 'text-warm-400 hover:text-warm-900'
               }`}
             >
               {cat.name}
@@ -167,22 +165,22 @@ export default function Resources() {
         </div>
 
         {/* Resource Cards */}
-        <div className="space-y-8">
+        <div className="space-y-12">
           {displayCategories.map((category, ci) => (
             <motion.section
               key={category.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: ci * 0.1 }}
             >
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500/30 to-accent-500/30 flex items-center justify-center">
+              <h2 className="text-2xl font-black text-warm-900 mb-6 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-primary-600 shadow-md border border-primary-50">
                   {CATEGORY_ICONS[category.id] || CATEGORY_ICONS.stress}
-                </span>
+                </div>
                 {category.name}
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {category.resources.map((resource, ri) => {
                   const badge = TYPE_BADGES[resource.type] || TYPE_BADGES.article;
                   const isExpanded = expandedCard === `${category.id}-${ri}`;
@@ -191,29 +189,33 @@ export default function Resources() {
                     <motion.div
                       key={ri}
                       layout
-                      className="bg-white border border-warm-200 rounded-xl hover:shadow-md transition-all duration-200 p-5 cursor-pointer"
+                      className="bg-white border border-warm-100 rounded-[2rem] hover:shadow-xl transition-all duration-300 p-8 cursor-pointer relative overflow-hidden group"
                       onClick={() => setExpandedCard(isExpanded ? null : `${category.id}-${ri}`)}
                     >
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-semibold text-warm-900 pr-2">{resource.title}</h3>
-                        <span className={`badge border text-xs whitespace-nowrap ${badge.color}`}>
+                      <div className="flex items-start justify-between mb-6">
+                        <h3 className="text-xl font-black text-warm-900 tracking-tight group-hover:text-primary-600 transition-colors pr-8">
+                          {resource.title}
+                        </h3>
+                        <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border transition-colors ${badge.color}`}>
                           {badge.label}
                         </span>
                       </div>
 
-                      <p className={`text-warm-500 text-sm leading-relaxed ${isExpanded ? '' : 'line-clamp-2'}`}>
+                      <p className={`text-warm-600 font-medium leading-[1.65] text-base ${isExpanded ? '' : 'line-clamp-2'}`}>
                         {resource.description}
                       </p>
 
-                      <div className="flex items-center justify-between mt-3">
-                        <span className="text-xs text-warm-400 flex items-center gap-1">
-                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          {resource.duration}
-                        </span>
-                        <span className="text-xs text-primary-600">
-                          {isExpanded ? 'Click to collapse' : 'Click to expand'}
+                      <div className="flex items-center justify-between mt-8 pt-6 border-t border-warm-50">
+                        <div className="flex items-center gap-4">
+                          <span className="text-[11px] font-black text-warm-400 uppercase tracking-widest flex items-center gap-2">
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {resource.duration}
+                          </span>
+                        </div>
+                        <span className="text-[11px] font-black text-primary-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                          {isExpanded ? 'Show less' : 'Read more'}
                         </span>
                       </div>
                     </motion.div>
@@ -227,3 +229,4 @@ export default function Resources() {
     </div>
   );
 }
+

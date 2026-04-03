@@ -1,7 +1,7 @@
 {
-  "name": "mindwell-server",
+  "name": "reclaim-server",
   "version": "1.0.0",
-  "description": "Backend API for MindWell - Digital Well-Being & Mental Health Support Platform",
+  "description": "Backend API for RECLAIM - Digital Well-Being & Mental Health Support Platform",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

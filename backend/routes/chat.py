@@ -105,17 +105,23 @@ async def send_message(
     if not message:
         raise HTTPException(status_code=400, detail="Message is required")
 
+    print(f"[Chat] User '{user.uid}' sent: {message[:80]}")
+
     # Always run sentiment analysis (for emotion badges + crisis detection)
     analysis = analyze_text(message)
+    print(f"[Chat] Sentiment: {analysis['emotion']}, crisis={analysis['isCrisis']}")
 
     # Try Ollama for a personalized response
     ai_response_text = None
     ollama_available = await is_ollama_available()
+    print(f"[Chat] Ollama available: {ollama_available}")
 
     if ollama_available:
         history = _get_history(user.uid)
         mood_summary = _get_mood_summary(user.uid)
+        print(f"[Chat] Context: {len(history)} history, mood={'yes' if mood_summary else 'no'}")
         ai_response_text = await generate_ollama_response(message, history, mood_summary)
+        print(f"[Chat] Ollama result: {'OK ' + str(len(ai_response_text)) + ' chars' if ai_response_text else 'FAILED - using fallback'}")
 
     # Fall back to template responses if Ollama is unavailable or failed
     if not ai_response_text:

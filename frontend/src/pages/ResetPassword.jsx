@@ -66,14 +66,14 @@ export default function ResetPassword() {
 
   if (checking) {
     return (
-      <div className="min-h-screen bg-warm-50 flex items-center justify-center">
+      <div className="min-h-screen bg-warm-900 flex items-center justify-center">
         <div className="text-warm-500">Verifying reset link...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-warm-50 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-warm-900 flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,16 +81,16 @@ export default function ResetPassword() {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center">
-            <svg className="w-6 h-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <div className="w-12 h-12 rounded-xl bg-primary-500/15 flex items-center justify-center">
+            <svg className="w-6 h-6 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5.002 5.002 0 017.072 0" />
             </svg>
           </div>
-          <span className="text-3xl font-bold text-primary-700">MindWell</span>
+          <span className="text-3xl font-bold text-primary-400">RECLAIM</span>
         </Link>
 
         {/* Card */}
-        <div className="bg-white border border-warm-200 rounded-xl shadow-sm p-8">
+        <div className="bg-warm-800/60 border border-warm-700/50 rounded-xl shadow-sm p-8">
           {success ? (
             /* Success */
             <div className="text-center">
@@ -99,11 +99,11 @@ export default function ResetPassword() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-warm-900 mb-2">Password Reset</h2>
+              <h2 className="text-2xl font-bold text-warm-100 mb-2">Password Reset</h2>
               <p className="text-warm-500 mb-4">
                 Your password has been successfully updated. Redirecting to your dashboard...
               </p>
-              <Link to="/dashboard" className="text-primary-600 hover:text-primary-700 font-medium text-sm">
+              <Link to="/dashboard" className="text-primary-400 hover:text-primary-400 font-medium text-sm">
                 Go to Dashboard →
               </Link>
             </div>
@@ -115,7 +115,7 @@ export default function ResetPassword() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-warm-900 mb-2">Invalid Reset Link</h2>
+              <h2 className="text-2xl font-bold text-warm-100 mb-2">Invalid Reset Link</h2>
               <p className="text-warm-500 mb-6">
                 This password reset link is invalid or has expired. Please request a new one.
               </p>
@@ -127,19 +127,19 @@ export default function ResetPassword() {
             /* Reset Form */
             <>
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="w-16 h-16 bg-primary-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-warm-900 mb-2">Set New Password</h2>
+                <h2 className="text-2xl font-bold text-warm-100 mb-2">Set New Password</h2>
                 <p className="text-warm-500 text-sm">
-                  Choose a strong password for your MindWell account.
+                  Choose a strong password for your RECLAIM account.
                 </p>
               </div>
 
               {error && (
-                <div className="bg-red-50 border border-red-200 text-red-600 p-3 rounded-xl mb-4 text-sm">
+                <div className="bg-red-900/30 border border-red-500/30 text-red-400 p-3 rounded-xl mb-4 text-sm">
                   {error}
                 </div>
               )}

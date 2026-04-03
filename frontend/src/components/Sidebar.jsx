@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { motion } from 'framer-motion';
 
 const NAV_ITEMS = [
   {
@@ -74,54 +75,69 @@ export default function Sidebar({ active }) {
   const currentPath = active || location.pathname;
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-warm-200 flex flex-col z-50">
+    <aside className="fixed left-6 top-6 bottom-6 w-64 bg-white/70 border border-white/50 rounded-[3rem] flex flex-col z-50 shadow-[0_8px_40px_rgba(0,0,0,0.03)] backdrop-blur-2xl">
       {/* Logo */}
-      <div className="p-6 border-b border-warm-100">
+      <div className="p-10">
         <Link to="/dashboard" className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center">
-            <svg className="w-5 h-5 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg shadow-primary-200/50 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+            <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5.002 5.002 0 017.072 0" />
             </svg>
           </div>
-          <span className="text-lg font-semibold text-warm-900">MindWell</span>
+          <span className="text-2xl font-black text-slate-900 tracking-tighter">RECLAIM</span>
         </Link>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            className={`nav-link ${currentPath === item.path ? 'nav-link-active' : ''}`}
-          >
-            {item.icon}
-            <span className="text-sm">{item.label}</span>
-          </Link>
-        ))}
+      <nav className="flex-1 px-4 space-y-1.5 overflow-y-auto custom-scrollbar">
+        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6 ml-6">Dashboard</p>
+        {NAV_ITEMS.map((item) => {
+          const isActive = currentPath === item.path;
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`nav-item ${isActive ? 'nav-item-active' : 'nav-item-inactive'}`}
+            >
+              <div className="flex-shrink-0 transition-transform group-hover:scale-110">
+                {item.icon}
+              </div>
+              <span className="text-sm font-bold tracking-tight">{item.label}</span>
+              {isActive && (
+                <motion.div 
+                  layoutId="active-nav"
+                  className="absolute right-4 w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_10px_white]"
+                />
+              )}
+            </Link>
+          );
+        })}
       </nav>
 
       {/* User Section */}
-      <div className="p-4 border-t border-warm-100">
-        <div className="flex items-center gap-3 mb-3 px-2">
-          <div className="w-9 h-9 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-semibold text-sm">
-            {(currentUser?.displayName || 'D')[0].toUpperCase()}
+      <div className="p-6 mt-auto">
+        <div className="bg-slate-50/50 rounded-[2rem] p-4 border border-white/50 backdrop-blur-sm shadow-inner transition-all hover:bg-slate-50">
+          <div className="flex items-center gap-3 mb-4 px-1">
+            <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-black text-xs shadow-inner ring-2 ring-white">
+              {(currentUser?.displayName || 'D')[0].toUpperCase()}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-black text-slate-900 truncate">{currentUser?.displayName || 'Demo User'}</p>
+              <p className="text-[10px] text-slate-400 font-bold truncate">{currentUser?.email || 'demo@reclaim.app'}</p>
+            </div>
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-warm-900 truncate">{currentUser?.displayName || 'Demo User'}</p>
-            <p className="text-xs text-warm-400 truncate">{currentUser?.email || 'demo@mindwell.app'}</p>
-          </div>
+          <button
+            onClick={logout}
+            className="w-full flex items-center justify-center gap-2 py-3 text-xs font-black text-slate-500 hover:text-red-500 hover:bg-red-50/50 rounded-2xl transition-all duration-300"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+            </svg>
+            SIGN OUT
+          </button>
         </div>
-        <button
-          onClick={logout}
-          className="w-full flex items-center gap-2 px-3 py-2 text-sm text-warm-500 hover:text-warm-700 hover:bg-warm-50 rounded-lg transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-          </svg>
-          Sign Out
-        </button>
       </div>
     </aside>
   );
 }
+

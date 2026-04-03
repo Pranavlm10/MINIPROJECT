@@ -1,4 +1,4 @@
--- MindWell Supabase Database Schema
+-- RECLAIM Supabase Database Schema
 -- Run this in Supabase SQL Editor: https://supabase.com/dashboard/project/YOUR_PROJECT/sql
 
 -- ═══════════════════════════════════════════════════

@@ -29,7 +29,7 @@ app.use('/api/resources', resourcesRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', message: 'MindWell API is running' });
+  res.json({ status: 'ok', message: 'RECLAIM API is running' });
 });
 
 // Error handling middleware
@@ -42,5 +42,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✨ MindWell server running on http://localhost:${PORT}`);
+  console.log(`✨ RECLAIM server running on http://localhost:${PORT}`);
 });

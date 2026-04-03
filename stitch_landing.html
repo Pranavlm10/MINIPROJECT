@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RECLAIM | Healing the Student Mind</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#faf9fc",
+              "secondary-dim": "#3c508e",
+              "surface-container-highest": "#e2e2ea",
+              "background": "#faf9fc",
+              "tertiary-dim": "#565065",
+              "on-tertiary-container": "#554e64",
+              "tertiary-container": "#e8def8",
+              "primary-dim": "#5a449a",
+              "error-dim": "#6b0221",
+              "secondary-fixed-dim": "#c8d3ff",
+              "on-primary-container": "#30156e",
+              "tertiary": "#635c71",
+              "surface-variant": "#e2e2ea",
+              "surface-dim": "#d9d9e1",
+              "surface-container-low": "#f4f3f8",
+              "on-secondary-fixed": "#273c79",
+              "surface-tint": "#6750a7",
+              "error": "#a8364b",
+              "inverse-surface": "#0d0e11",
+              "on-surface": "#303238",
+              "surface-container-high": "#e8e7ee",
+              "secondary-container": "#dce1ff",
+              "on-tertiary-fixed": "#423c50",
+              "on-primary-fixed": "#0f0035",
+              "on-tertiary-fixed-variant": "#5f586e",
+              "primary-container": "#b29af7",
+              "tertiary-fixed": "#e8def8",
+              "primary-fixed": "#b29af7",
+              "on-primary": "#fdf7ff",
+              "tertiary-fixed-dim": "#dad0ea",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#fdf7ff",
+              "outline": "#797a81",
+              "on-secondary": "#faf8ff",
+              "on-error": "#fff7f7",
+              "on-secondary-fixed-variant": "#455897",
+              "secondary-fixed": "#dce1ff",
+              "surface": "#faf9fc",
+              "inverse-primary": "#b29af7",
+              "on-primary-fixed-variant": "#392177",
+              "error-container": "#f97386",
+              "primary": "#6750a7",
+              "on-surface-variant": "#5d5f65",
+              "outline-variant": "#b1b1b9",
+              "primary-fixed-dim": "#a48de9",
+              "secondary": "#495c9b",
+              "inverse-on-surface": "#9d9ca0",
+              "on-background": "#303238",
+              "surface-container": "#eeedf3",
+              "on-secondary-container": "#3b4e8d",
+              "on-error-container": "#6e0523"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .bg-blob {
+        filter: blur(80px);
+        z-index: -1;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-3 w-[90%] md:w-full rounded-full mt-4 mx-auto max-w-5xl bg-white/20 backdrop-blur-3xl shadow-[0px_20px_40px_rgba(48,50,56,0.04)]">
+<div class="text-2xl font-black text-[#6750a7] italic font-headline">RECLAIM</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#6750a7] font-bold border-b-2 border-[#6750a7] font-headline tracking-tight text-lg hover:scale-105 transition-all" href="#">Benefits</a>
+<a class="text-[#303238] opacity-70 font-headline tracking-tight text-lg hover:opacity-100 hover:scale-105 transition-all" href="#">Journal</a>
+<a class="text-[#303238] opacity-70 font-headline tracking-tight text-lg hover:opacity-100 hover:scale-105 transition-all" href="#">Breathwork</a>
+<a class="text-[#303238] opacity-70 font-headline tracking-tight text-lg hover:opacity-100 hover:scale-105 transition-all" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-[#6750a7] font-bold font-headline py-2 px-4 hover:scale-105 transition-all active:scale-95">Explore Demo</button>
+<button class="bg-gradient-to-br from-[#6750a7] to-[#b29af7] text-on-primary font-headline font-bold py-2.5 px-6 rounded-full shadow-lg hover:scale-105 transition-all active:scale-95">Start Journey</button>
+</div>
+</header>
+<main class="relative pt-32">
+<!-- Background Blobs -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+<div class="bg-blob absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary-container/30 rounded-full"></div>
+<div class="bg-blob absolute top-[20%] right-[-5%] w-[400px] h-[400px] bg-secondary-container/40 rounded-full"></div>
+<div class="bg-blob absolute bottom-[10%] left-[20%] w-[600px] h-[600px] bg-tertiary-container/20 rounded-full"></div>
+</div>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32 flex flex-col items-center text-center relative z-10">
+<div class="inline-block px-4 py-1.5 mb-8 rounded-full bg-primary/5 text-primary font-bold text-sm tracking-widest uppercase border border-primary/10">
+                Mental Wellness for Academia
+            </div>
+<h1 class="font-headline font-extrabold text-5xl md:text-8xl text-on-surface leading-[1.1] mb-8 tracking-tighter max-w-4xl">
+                Healing the <span class="text-primary italic">Student</span> Mind
+            </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
+                A digital sanctuary designed specifically for the unique pressures of university life. Find clarity, peace, and community in a space built for your serenity.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary text-lg font-bold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition-all active:scale-95">
+                    Start Your Free Journey
+                </button>
+<button class="bg-surface-container-highest/50 backdrop-blur-md text-on-surface text-lg font-semibold px-10 py-5 rounded-full hover:bg-surface-container-highest transition-all active:scale-95">
+                    Explore Demo Mode
+                </button>
+</div>
+<!-- Mood Orb Preview -->
+<div class="mt-24 relative">
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-tr from-primary-fixed to-primary-dim shadow-[0px_40px_80px_rgba(103,80,167,0.3)] flex items-center justify-center animate-pulse duration-[4000ms]">
+<div class="text-on-primary text-center">
+<span class="material-symbols-outlined text-5xl mb-2" data-icon="air" style="font-variation-settings: 'FILL' 1;">air</span>
+<p class="font-headline text-2xl font-bold">Breathe</p>
+</div>
+</div>
+<!-- Floaties -->
+<div class="absolute -top-10 -right-20 glass-card p-4 rounded-xl shadow-sm hidden md:block">
+<p class="text-sm font-semibold text-primary">Daily Mood: Peaceful</p>
+</div>
+<div class="absolute bottom-0 -left-20 glass-card p-4 rounded-xl shadow-sm hidden md:block">
+<p class="text-sm font-semibold text-secondary">Focus Score: 88%</p>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="max-w-5xl mx-auto px-6 mb-32">
+<div class="bg-surface-container-low rounded-xl py-12 px-8 md:px-16 flex flex-wrap justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-headline font-black text-primary">24/7</span>
+<span class="text-on-surface-variant font-medium">Global Support</span>
+</div>
+<div class="h-10 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-headline font-black text-primary">100%</span>
+<span class="text-on-surface-variant font-medium">Private &amp; Secure</span>
+</div>
+<div class="h-10 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-headline font-black text-primary">SDG 3</span>
+<span class="text-on-surface-variant font-medium">Health &amp; Wellbeing</span>
+</div>
+<div class="h-10 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-3xl font-headline font-black text-primary">50k+</span>
+<span class="text-on-surface-variant font-medium">Students Enrolled</span>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 mb-40">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 glass-card rounded-xl overflow-hidden shadow-sm relative min-h-[500px] flex flex-col justify-end p-12 group transition-all duration-500 hover:shadow-xl">
+<div class="absolute inset-0 z-0">
+<img alt="Student Community" class="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" data-alt="a diverse group of college students sitting together in a modern bright study lounge with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiGZLX8nWwJNx8JnA2FENSN4MvGfsYtHI_QVqFS92hm361cfavGF1lBeIOv7oPbnO__GyqBBcoQjuuIVx33rKoy5q-MDrW0uKcQ95Ty8GkhffsfhFHxWUW70CJxpgf7A0o84hhgAtOrfeIcdUDPCmpSXxmi36hWglniKywyyp8_prRRMh5PgDGCm5B6SqQBX-MhiY4GLcqDY7PGknC7vwPdbyfhSMdU6UnhysEtzxUH40gvIP86s47fmzXxWRrBnYsFJAgwXl9t4M5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-bright via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="groups">groups</span>
+<h3 class="text-4xl font-headline font-extrabold mb-4">Secure Community</h3>
+<p class="text-lg text-on-surface-variant mb-6 leading-relaxed">Connect with peers in an anonymous, moderated space. Share your journey, find study partners, and realize you are never alone in this sanctuary.</p>
+<a class="inline-flex items-center text-primary font-bold hover:underline gap-2" href="#">
+                            Join the conversation
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Secondary Feature Card -->
+<div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-12 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+<div>
+<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<h3 class="text-3xl font-headline font-bold mb-4">AI Counseling</h3>
+<p class="opacity-80 text-lg leading-relaxed">Empathetic, data-driven support available instantly. Our AI understands student stressors from finals to finances.</p>
+</div>
+<button class="mt-8 bg-on-primary text-primary font-bold py-3 px-6 rounded-full hover:scale-105 transition-all">Learn More</button>
+</div>
+<!-- Bottom Feature 1 -->
+<div class="md:col-span-6 glass-card rounded-xl p-12 shadow-sm hover:shadow-xl transition-all flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2">
+<img alt="Mood Tracking" class="w-full aspect-square object-cover rounded-lg shadow-inner" data-alt="Close up of a smart watch and smartphone displaying a calming lavender interface for mood tracking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANZilY2OVyNo3WDOTs405-u0lMp-fGc2W9-KogUyOWBLRk3fnfmwGVewU0AJBqhEFCJozs9iHHgm1egpq6fX0wLKNenZ_CXcAkAvjRHGXuBDTtyksKYE_WyztSXoYjzzhgBVKXk079djGuaH-4Y_9hBjIHLyYzpZXWE0VQ8zuRfelZCkwQoppHu_8wIBCX3njBbPL5Y0TbuFPSjhNZRS1B9CWG-QXFLnSIeBSnoFrST_-IAIyhUMbTr0mWR07FtF-2MLbpHZsoGnrE"/>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="text-2xl font-headline font-bold mb-3">Mood Tracking</h3>
+<p class="text-on-surface-variant mb-4">Identify patterns in your emotional health with beautiful, clinical-grade visual reports.</p>
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="monitoring">monitoring</span>
+</div>
+</div>
+<!-- Bottom Feature 2 -->
+<div class="md:col-span-6 bg-surface-container-high rounded-xl p-12 shadow-sm hover:shadow-xl transition-all flex flex-col justify-center">
+<div class="max-w-md">
+<div class="flex gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<span class="material-symbols-outlined text-secondary" data-icon="encrypted">encrypted</span>
+<span class="material-symbols-outlined text-secondary" data-icon="lock">lock</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-3">Institutional Grade Privacy</h3>
+<p class="text-on-surface-variant">Your data is yours. We use zero-knowledge encryption to ensure your journals and chats stay strictly confidential between you and the platform.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-6 mb-40">
+<div class="bg-gradient-to-br from-secondary-dim to-[#6750a7] rounded-xl p-12 md:p-24 text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-[100px]"></div>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-headline font-black mb-8">Ready to reclaim your peace?</h2>
+<p class="text-xl opacity-90 mb-12">Join 50,000+ students who have found their sanctuary. Start your 14-day free trial today.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-white text-secondary-dim px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl">Get Started Now</button>
+<button class="border-2 border-white/30 backdrop-blur-sm px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all">Talk to Sales</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f4f3f8] dark:bg-slate-950 full-width pt-16 pb-8">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="text-xl font-bold text-[#303238] dark:text-white mb-2">RECLAIM Sanctuary</div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide text-[#303238]/60 dark:text-white/60">Designed for student serenity.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-[#303238]/60 dark:text-white/60 font-['Plus_Jakarta_Sans'] text-sm tracking-wide hover:text-[#6750a7] dark:hover:text-[#b29af7] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-[#303238]/60 dark:text-white/60 font-['Plus_Jakarta_Sans'] text-sm tracking-wide hover:text-[#6750a7] dark:hover:text-[#b29af7] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-[#303238]/60 dark:text-white/60 font-['Plus_Jakarta_Sans'] text-sm tracking-wide hover:text-[#6750a7] dark:hover:text-[#b29af7] transition-colors opacity-80 hover:opacity-100" href="#">Student Resources</a>
+<a class="text-[#303238]/60 dark:text-white/60 font-['Plus_Jakarta_Sans'] text-sm tracking-wide hover:text-[#6750a7] dark:hover:text-[#b29af7] transition-colors opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="share">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="language">language</span>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-12 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-['Plus_Jakarta_Sans'] text-xs tracking-wide text-[#303238]/40 dark:text-white/40">
+                © 2024 RECLAIM Sanctuary. Empowering students through digital mental health.
+            </p>
+</div>
+</footer>
+</body></html>

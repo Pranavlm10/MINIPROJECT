@@ -15,19 +15,28 @@ export function AuthProvider({ children }) {
   // Demo user for when Supabase isn't configured
   const demoUser = {
     id: 'demo-user-001',
-    email: 'demo@mindwell.app',
+    email: 'demo@reclaim.app',
     displayName: 'Demo User',
     photoURL: null
   };
 
+  // Capitalize the first letter of each word
+  function toTitleCase(str) {
+    if (!str) return str;
+    return str.replace(/[_\.\-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+
   // Map Supabase user to our app's user shape
   function mapUser(supaUser) {
     if (!supaUser) return null;
+    const rawName = supaUser.user_metadata?.display_name
+      || supaUser.user_metadata?.full_name
+      || supaUser.email?.split('@')[0];
     return {
       uid: supaUser.id,
       id: supaUser.id,
       email: supaUser.email,
-      displayName: supaUser.user_metadata?.display_name || supaUser.user_metadata?.full_name || supaUser.email?.split('@')[0],
+      displayName: toTitleCase(rawName),
       photoURL: supaUser.user_metadata?.avatar_url || null
     };
   }
@@ -56,21 +65,36 @@ export function AuthProvider({ children }) {
     }
   }
 
-  async function login(email, password) {
+  async function login(email, password, displayName = '') {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password
       });
       if (error) throw error;
-      const mapped = mapUser(data.user);
+
+      let user = data.user;
+
+      // If a name was provided and is not already set, save it to Supabase
+      if (displayName && !user.user_metadata?.display_name) {
+        const { data: updated } = await supabase.auth.updateUser({
+          data: { display_name: displayName }
+        });
+        if (updated?.user) user = updated.user;
+      }
+
+      const mapped = mapUser(user);
+      // Override displayName with what the user typed if provided
+      if (displayName) mapped.displayName = toTitleCase(displayName);
       setCurrentUser(mapped);
       return { user: mapped };
     } catch (error) {
       if (error.message?.includes('Invalid API key') || error.message?.includes('fetch')) {
+        const nameFromEmail = displayName ? toTitleCase(displayName) : toTitleCase(email?.split('@')[0]);
+        const fallbackUser = { ...demoUser, email, displayName: nameFromEmail };
         setIsDemoMode(true);
-        setCurrentUser({ ...demoUser, email });
-        return { user: { ...demoUser, email } };
+        setCurrentUser(fallbackUser);
+        return { user: fallbackUser };
       }
       throw error;
     }

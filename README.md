@@ -1,4 +1,4 @@
-# 🧠 MindWell — Digital Well-Being & Mental Health Support Platform
+# 🧠 RECLAIM — Digital Well-Being & Mental Health Support Platform
 
 > Aligned with **SDG 3: Good Health & Well-Being**
 
@@ -43,7 +43,7 @@ cd server
 npm install
 
 # Install frontend dependencies
-cd ../client
+cd ../frontend
 npm install
 ```
 
@@ -58,7 +58,7 @@ SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ```
 
-**Frontend** — Create `client/.env`:
+**Frontend** — Create `frontend/.env`:
 ```
 VITE_SUPABASE_URL=https://your-project-id.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
@@ -74,7 +74,7 @@ cd server
 npm run dev
 
 # Terminal 2: Start frontend
-cd client
+cd frontend
 npm run dev
 ```
 
@@ -85,7 +85,7 @@ Open **http://localhost:5173** in your browser.
 ## 📁 Project Structure
 
 ```
-├── client/              # React + Tailwind frontend
+├── frontend/            # React + Tailwind frontend
 │   ├── src/
 │   │   ├── components/  # Sidebar, Navbar
 │   │   ├── pages/       # Landing, Login, Dashboard, Chat, Journal, etc.
