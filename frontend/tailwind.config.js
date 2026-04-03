@@ -7,57 +7,57 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Ethereal Clarity — Stitch Design System
+        // Ocean Deep Design System
         primary: {
-          50:  '#f3f0fb',
-          100: '#e3dcf7',
-          200: '#c9bef2',
-          300: '#b29af7', // primary-container / primary-fixed
-          400: '#a48de9', // primary-fixed-dim
-          500: '#9D86E1', // brand lavender
-          600: '#6750a7', // primary
-          700: '#5a449a', // primary-dim
-          800: '#392177',
-          900: '#30156e',
-          950: '#0f0035',
+          50:  '#f0f4f8',
+          100: '#d9e2ec',
+          200: '#bcccdc',
+          300: '#9fb3c8', // primary-container
+          400: '#829ab1', 
+          500: '#627d98', 
+          600: '#2a5a8c', // Ocean Blue
+          700: '#234a75', 
+          800: '#1d3a5e',
+          900: '#162b46',
+          950: '#0b1624',
         },
         secondary: {
-          50:  '#eef0fb',
-          100: '#dce1ff', // secondary-container / secondary-fixed
-          200: '#c8d3ff', // secondary-fixed-dim
-          300: '#7e91d4',
-          400: '#5f72b0',
-          500: '#495c9b', // secondary
-          600: '#3c508e', // secondary-dim
-          700: '#455897',
-          800: '#3b4e8d',
-          900: '#273c79',
+          50:  '#f0fcff',
+          100: '#dbf6ff', // secondary-container
+          200: '#adebff', 
+          300: '#75ddff',
+          400: '#33ccff',
+          500: '#00b4d8', // Cyan
+          600: '#008fb3', 
+          700: '#00708f',
+          800: '#005a75',
+          900: '#00475c',
         },
         tertiary: {
-          50:  '#f5f0fc',
-          100: '#e8def8', // tertiary-container / tertiary-fixed
-          200: '#dad0ea', // tertiary-fixed-dim
-          500: '#635c71', // tertiary
-          600: '#565065', // tertiary-dim
-          700: '#554e64',
-          800: '#5f586e',
-          900: '#423c50',
+          50:  '#f5f7fa',
+          100: '#e4e7eb', // tertiary-container
+          200: '#cbd2d9',
+          500: '#7b8794', // tertiary
+          600: '#616e7c',
+          700: '#52606d',
+          800: '#3e4c59',
+          900: '#323f4b',
         },
         surface: {
-          DEFAULT:   '#faf9fc',
-          bright:    '#faf9fc',
-          dim:       '#d9d9e1',
-          low:       '#f4f3f8', // surface-container-low
-          base:      '#eeedf3', // surface-container
-          high:      '#e8e7ee', // surface-container-high
-          highest:   '#e2e2ea', // surface-container-highest
-          lowest:    '#ffffff', // surface-container-lowest
+          DEFAULT:   '#f4f6f9',
+          bright:    '#f8f9fc',
+          dim:       '#dce1e6',
+          low:       '#f7f9fa',
+          base:      '#f4f6f9',
+          high:      '#eef1f5',
+          highest:   '#e6eaef',
+          lowest:    '#ffffff',
         },
         on: {
-          surface:   '#303238',
-          'surface-variant': '#5d5f65',
-          primary:   '#fdf7ff',
-          secondary: '#faf8ff',
+          surface:   '#18212b',
+          'surface-variant': '#4a5b6d',
+          primary:   '#ffffff',
+          secondary: '#ffffff',
           tertiary:  '#fdf7ff',
           background:'#303238',
           error:     '#fff7f7',
