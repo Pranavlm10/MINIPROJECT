@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { generateCounselorResponse } from '../services/counselor';
 import { chatAPI } from '../services/api';
 import Sidebar from '../components/Sidebar';
 
@@ -52,9 +53,9 @@ export default function Chat() {
     setLoading(true);
 
     try {
+      // Try backend first
       const response = await chatAPI.sendMessage(userMessage);
       const data = response.data.data;
-
       if (data && data.aiResponse) {
         setMessages(prev => [...prev, {
           type: 'ai',
@@ -65,22 +66,18 @@ export default function Chat() {
           timestamp: data.timestamp
         }]);
       } else {
-        throw new Error('Empty AI response');
+        throw new Error('Empty response');
       }
-    } catch (error) {
-      const errorMessage = error.code === 'ECONNABORTED' 
-        ? "I'm taking longer than usual to respond. The AI is processing your message — please try again in a moment."
-        : "I'm having trouble connecting right now. Let me try a different approach.";
-
+    } catch {
+      // Fallback: use local client-side counselor
+      const data = generateCounselorResponse(userMessage);
       setMessages(prev => [...prev, {
         type: 'ai',
-        text: errorMessage + "\n\nIn the meantime, remember: your feelings are valid.",
-        emotion: 'calm',
-        strategies: [
-          { title: 'Deep Breathing', description: 'Try 4-7-8 breathing: inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. Repeat 3 times.' },
-          { title: 'Grounding Exercise', description: 'Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.' }
-        ],
-        timestamp: new Date().toISOString()
+        text: data.aiResponse,
+        emotion: data.emotion,
+        strategies: data.strategies,
+        crisisResources: data.crisisResources,
+        timestamp: data.timestamp
       }]);
     }
 
