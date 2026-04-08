@@ -4,7 +4,7 @@ const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const api = axios.create({
   baseURL: API_BASE,
-  timeout: 120000, // 120 seconds — Ollama can take time on CPU
+  timeout: 15000, // 15 seconds — Reduce from 120s for faster UI fallback
   headers: {
     'Content-Type': 'application/json'
   }
@@ -26,7 +26,7 @@ api.interceptors.request.use(async (config) => {
 
 // Chat API
 export const chatAPI = {
-  sendMessage: (message) => api.post('/chat', { message }, { timeout: 120000 }),
+  sendMessage: (message) => api.post('/chat', { message }), // Use default timeout
   getHistory: () => api.get('/chat/history'),
   clearHistory: () => api.delete('/chat/history')
 };

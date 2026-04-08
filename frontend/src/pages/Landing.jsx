@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
+import api from '../services/api';
 
 export default function Landing() {
   const navigate = useNavigate();
   const { enterDemoMode } = useAuth();
+
+  // Wake up the server on mount (useful for Render free tier)
+  useEffect(() => {
+    api.get('/health').catch(() => {
+      // Ignore errors, we just want to wake it up
+    });
+  }, []);
 
   const handleDemo = () => {
     enterDemoMode();

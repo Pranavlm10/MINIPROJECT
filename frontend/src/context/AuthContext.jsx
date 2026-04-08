@@ -13,8 +13,10 @@ export function AuthProvider({ children }) {
   const [isDemoMode, setIsDemoMode] = useState(false);
 
   // Demo user for when Supabase isn't configured
+  // Generate a random ID suffix to ensure each session is fresh
+  const sessionSuffix = Math.random().toString(36).substring(2, 8);
   const demoUser = {
-    id: 'demo-user-001',
+    id: `demo-user-${sessionSuffix}`,
     email: 'demo@reclaim.app',
     displayName: 'Demo User',
     photoURL: null
